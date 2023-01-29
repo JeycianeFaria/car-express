@@ -1,6 +1,7 @@
 package br.com.jeyciane.carexpress.domain;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import java.util.Date;
 public class Driver {
 
     @Id
+    @GeneratedValue
     private Long id;
     private String name;
     private Date birthDate;
