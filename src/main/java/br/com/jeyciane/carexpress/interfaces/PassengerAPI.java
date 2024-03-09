@@ -1,7 +1,6 @@
 package br.com.jeyciane.carexpress.interfaces;
 
 import br.com.jeyciane.carexpress.domain.Passenger;
-import br.com.jeyciane.carexpress.domain.Passenger;
 import br.com.jeyciane.carexpress.domain.PassengerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +15,7 @@ import static java.util.Optional.ofNullable;
 
 @Service
 @RestController
-@RequestMapping(path ="/passengers", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/passengers", produces = MediaType.APPLICATION_JSON_VALUE)
 public class PassengerAPI {
 
     @Autowired
