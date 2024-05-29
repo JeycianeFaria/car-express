@@ -15,28 +15,28 @@ import static java.util.Optional.ofNullable;
 
 @Service
 @RestController
-@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/drivers", produces = MediaType.APPLICATION_JSON_VALUE)
 public class DriverAPI {
 
     @Autowired
     DriverRepository driverRepository;
 
-    @GetMapping("/drivers")
+    @GetMapping
     public List<Driver> listDrivers() {
         return driverRepository.findAll();
     }
 
-    @GetMapping("/drivers/{id}")
+    @GetMapping("/{id}")
     public Driver findDriver(@PathVariable Long id) {
         return driverRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("/drivers")
+    @PostMapping
     public Driver createDriver(@RequestBody Driver driver) {
         return driverRepository.save(driver);
     }
 
-    @PutMapping("/drivers/{id}")
+    @PutMapping("/{id}")
     public Driver fullUpdateDriver(@PathVariable Long id, @RequestBody Driver driver) {
         Driver foundDriver = findDriver(id);
 
@@ -46,18 +46,17 @@ public class DriverAPI {
         return driverRepository.save(foundDriver);
     }
 
-    @PatchMapping("/drivers/{id}")
+    @PatchMapping("/{id}")
     public Driver incrementalUpdateDriver(@PathVariable Long id, @RequestBody Driver driver) {
         Driver foundDriver = findDriver(id);
 
         foundDriver.setName(ofNullable(driver.getName()).orElse(foundDriver.getName()));
         foundDriver.setBirthDate(ofNullable(driver.getBirthDate()).orElse(foundDriver.getBirthDate()));
 
-
         return driverRepository.save(foundDriver);
     }
 
-    @DeleteMapping("/drivers/{id}")
+    @DeleteMapping("/{id}")
     public void deleteDriver(@PathVariable Long id) {
         driverRepository.delete(findDriver(id));
     }
