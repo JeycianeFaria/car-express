@@ -1,7 +1,12 @@
 package br.com.jeyciane.carexpress.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+import java.util.Date;
 
 @Getter
 @Setter
@@ -18,5 +23,8 @@ public class TravelRequest {
     Passenger passenger;
     String origin;
     String destination;
+    @Enumerated(EnumType.STRING)
+    TravelRequestStatus status;
+    Date creationDate;
 
 }
