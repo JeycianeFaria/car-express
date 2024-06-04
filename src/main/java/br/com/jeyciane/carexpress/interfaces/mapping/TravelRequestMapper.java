@@ -3,9 +3,13 @@ package br.com.jeyciane.carexpress.interfaces.mapping;
 import br.com.jeyciane.carexpress.domain.Passenger;
 import br.com.jeyciane.carexpress.domain.PassengerRepository;
 import br.com.jeyciane.carexpress.domain.TravelRequest;
+import br.com.jeyciane.carexpress.interfaces.PassengerAPI;
 import br.com.jeyciane.carexpress.interfaces.input.TravelRequestInput;
 import br.com.jeyciane.carexpress.interfaces.output.TravelRequestOutput;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
@@ -42,6 +46,20 @@ public class TravelRequestMapper {
         travelRequestOutput.setCreationDate(travelRequest.getCreationDate());
 
         return travelRequestOutput;
+    }
+
+    public EntityModel<TravelRequestOutput> buildOutputModel(
+            TravelRequest travelRequest, TravelRequestOutput travelRequestOutput) {
+
+        Link passengerLink = WebMvcLinkBuilder.linkTo(PassengerAPI.class)
+                .slash(travelRequest.getPassenger().getId())
+                .withRel("passenger")
+                .withTitle(travelRequest.getPassenger().getName());
+
+        EntityModel<TravelRequestOutput> model = EntityModel.of(travelRequestOutput);
+        model.add(passengerLink);
+
+        return model;
     }
 
 }
