@@ -1,4 +1,4 @@
-package br.com.jeyciane.carexpress.interfaces.output;
+package br.com.jeyciane.carexpress.interfaces.incoming.output;
 
 import br.com.jeyciane.carexpress.domain.TravelRequestStatus;
 import lombok.Data;

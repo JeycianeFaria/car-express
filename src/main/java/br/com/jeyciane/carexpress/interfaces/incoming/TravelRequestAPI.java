@@ -1,9 +1,10 @@
-package br.com.jeyciane.carexpress.interfaces;
+package br.com.jeyciane.carexpress.interfaces.incoming;
 
 import br.com.jeyciane.carexpress.domain.TravelRequest;
-import br.com.jeyciane.carexpress.interfaces.input.TravelRequestInput;
-import br.com.jeyciane.carexpress.interfaces.mapping.TravelRequestMapper;
-import br.com.jeyciane.carexpress.interfaces.output.TravelRequestOutput;
+import br.com.jeyciane.carexpress.domain.TravelService;
+import br.com.jeyciane.carexpress.interfaces.incoming.input.TravelRequestInput;
+import br.com.jeyciane.carexpress.interfaces.incoming.mapping.TravelRequestMapper;
+import br.com.jeyciane.carexpress.interfaces.incoming.output.TravelRequestOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.MediaType;

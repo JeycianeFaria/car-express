@@ -1,4 +1,4 @@
-package br.com.jeyciane.carexpress.interfaces.input;
+package br.com.jeyciane.carexpress.interfaces.incoming.input;
 
 import lombok.Data;
 

@@ -1,11 +1,11 @@
-package br.com.jeyciane.carexpress.interfaces.mapping;
+package br.com.jeyciane.carexpress.interfaces.incoming.mapping;
 
 import br.com.jeyciane.carexpress.domain.Passenger;
 import br.com.jeyciane.carexpress.domain.PassengerRepository;
 import br.com.jeyciane.carexpress.domain.TravelRequest;
-import br.com.jeyciane.carexpress.interfaces.PassengerAPI;
-import br.com.jeyciane.carexpress.interfaces.input.TravelRequestInput;
-import br.com.jeyciane.carexpress.interfaces.output.TravelRequestOutput;
+import br.com.jeyciane.carexpress.interfaces.incoming.PassengerAPI;
+import br.com.jeyciane.carexpress.interfaces.incoming.input.TravelRequestInput;
+import br.com.jeyciane.carexpress.interfaces.incoming.output.TravelRequestOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;

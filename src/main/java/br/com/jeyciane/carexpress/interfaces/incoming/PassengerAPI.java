@@ -1,4 +1,4 @@
-package br.com.jeyciane.carexpress.interfaces;
+package br.com.jeyciane.carexpress.interfaces.incoming;
 
 import br.com.jeyciane.carexpress.domain.Passenger;
 import br.com.jeyciane.carexpress.domain.PassengerRepository;

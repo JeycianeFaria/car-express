@@ -1,8 +1,5 @@
-package br.com.jeyciane.carexpress.interfaces;
+package br.com.jeyciane.carexpress.domain;
 
-import br.com.jeyciane.carexpress.domain.TravelRequest;
-import br.com.jeyciane.carexpress.domain.TravelRequestRepository;
-import br.com.jeyciane.carexpress.domain.TravelRequestStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
