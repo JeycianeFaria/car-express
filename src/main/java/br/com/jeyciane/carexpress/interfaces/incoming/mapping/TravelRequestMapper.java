@@ -14,6 +14,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class TravelRequestMapper {
 
@@ -60,6 +63,12 @@ public class TravelRequestMapper {
         model.add(passengerLink);
 
         return model;
+    }
+
+    public List<EntityModel<TravelRequestOutput>> buildOutputModel(List<TravelRequest> requests) {
+        return requests.stream()
+                .map(tr -> buildOutputModel(tr, map(tr)))
+                .collect(Collectors.toList());
     }
 
 }
